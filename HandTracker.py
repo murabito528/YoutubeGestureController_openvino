@@ -1,5 +1,6 @@
 #model_path = "./intel/common-sign-language-0002/FP16-INT8/common-sign-language-0002.xml"
-model_path = "_internal/models/common-sign-language-0002.xml"
+model_path = "models/common-sign-language-0002.xml"
+#model_path = "_internal/models/common-sign-language-0002.xml"
 device = "CPU"
 
 import cv2
@@ -76,8 +77,8 @@ ctrl = YoutubeController()
 
 #configの読み取り
 config = configparser.ConfigParser()
-#config.read('config.ini')
-config.read('_internal/config.ini')
+config.read('config.ini')
+#config.read('_internal/config.ini')
 available_devices = core.available_devices
 print("available_devices:\n",available_devices)
 req_device = config.get("CONFIG","use_device")
